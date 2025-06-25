@@ -1,0 +1,40 @@
+<div class="ttt-container">
+  <h1 class="ttt-heading">Tic Tac Toe</h1>
+  <div class="ttt-scoreboard" aria-label="Scoreboard">
+    <div class="score" [class.active]="currentPlayer === 'X'">
+      X<br><span>{{ score.X }}</span>
+    </div>
+    <div class="divider"></div>
+    <div class="score" [class.active]="currentPlayer === 'O'">
+      O<br><span>{{ score.O }}</span>
+    </div>
+  </div>
+  <div class="ttt-board" role="grid" aria-label="Tic Tac Toe Board">
+    <button
+      *ngFor="let square of board; let i = index"
+      class="ttt-cell"
+      [ngClass]="{ winner: winner && board[i] === winner }"
+      (click)="handleMove(i)"
+      [disabled]="!!board[i] || winner || draw"
+      [attr.aria-label]="getAriaLabel(i)"
+      role="gridcell"
+      tabindex="0"
+    >
+      {{ square }}
+    </button>
+  </div>
+  <div class="ttt-status">
+    <ng-container *ngIf="winner">
+      <span class="ttt-winner">Winner: {{ winner }}</span>
+    </ng-container>
+    <ng-container *ngIf="!winner && draw">
+      <span class="ttt-draw">Draw!</span>
+    </ng-container>
+    <ng-container *ngIf="!winner && !draw">
+      <span>Current Turn: <b>{{ currentPlayer }}</b></span>
+    </ng-container>
+  </div>
+  <button class="ttt-reset-btn" (click)="resetGame()" aria-label="Reset game">
+    Reset Game
+  </button>
+</div>

@@ -1,0 +1,12 @@
+/* Minimal global styles: full height for app container only */
+html, body {
+  min-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fb;
+}
+body {
+  min-height: 100vh;
+}
