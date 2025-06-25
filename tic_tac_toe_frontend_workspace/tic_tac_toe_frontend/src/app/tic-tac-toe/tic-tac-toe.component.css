@@ -4,8 +4,8 @@
   --ttt-secondary: #424242;
   --ttt-accent: #ffca28;
   --ttt-board-bg: #f7f9fb;
-  --ttt-border: #1976d2;              /* use primary for borders */
-  --ttt-cell-empty: #ffca28;          /* use accent for cell backgrounds */
+  --ttt-border: #000000;           /* use black for all borders */
+  --ttt-cell-empty: #ffca28;       /* cell backgrounds */
   --ttt-winner-bg: #ffe082;
   --ttt-winner-border: #ffe082;
   --ttt-draw-bg: #f0f0f0;
@@ -74,7 +74,7 @@
   border-radius: 1.5rem;
   box-shadow: 0 2px 7px rgba(50,60,70,0.05);
   padding: 1.1rem;
-  border: 3px solid var(--ttt-border); /* emphasize new border color */
+  border: 3px solid var(--ttt-border); /* now black border */
 }
 
 .ttt-cell {
@@ -82,8 +82,8 @@
   font-size: 2.2rem;
   font-weight: 600;
   color: var(--ttt-primary);
-  background: var(--ttt-cell-empty);      /* new accent color */
-  border: 2.5px solid var(--ttt-border); /* primary color border */
+  background: var(--ttt-cell-empty);         /* #ffca28 for cell background */
+  border: 2.5px solid var(--ttt-border);    /* cell border is black */
   border-radius: 1rem;
   outline: none;
   cursor: pointer;
